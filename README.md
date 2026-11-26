@@ -141,12 +141,14 @@ Arabic-Speech-Recognition-ASR/
 
 | Model | WER |
 |---|---|
-| Whisper-small zero-shot (no fine-tuning) | ~45–55% |
+| Whisper-small zero-shot (no fine-tuning) | ~45–55% (estimate, not benchmarked in this repo) |
 | Whisper-small fine-tuned on FLEURS ar_eg | **21.8%** |
 
 ### Training Progress
 
-| Step | Train Loss | Val Loss | WER |
+WER below is validation WER during training. The headline 21.8% is the test-set WER of the best checkpoint (training used load_best_model_at_end with metric_for_best_model=wer), evaluated on 427 FLEURS ar_eg test samples.
+
+| Step | Train Loss | Val Loss | Val WER |
 |---|---|---|---|
 | 200 | 20.07 | 0.540 | 23.1% |
 | 400 | 9.37 | 0.349 | 22.0% ← best |
@@ -162,6 +164,9 @@ Arabic-Speech-Recognition-ASR/
 | Architecture | CNN-BiLSTM |
 | Dataset | RAVDESS → 4 classes |
 | Classes | neutral, happy, sad, angry |
+| Best validation accuracy | 63.9% |
+| Test accuracy | 61% (216 RAVDESS test samples) |
+| Test macro F1 | 0.56 |
 
 ### Speaker gender classification
 
@@ -170,6 +175,8 @@ Arabic-Speech-Recognition-ASR/
 | Architecture | x-vector CNN |
 | Task | Gender classification |
 | Classes | male, female |
+| Test accuracy | 100% (427 FLEURS ar_eg test samples) |
+| Note | Training data is imbalanced: 80% female, 20% male |
 
 ---
 
