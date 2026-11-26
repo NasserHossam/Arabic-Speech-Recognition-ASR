@@ -259,14 +259,6 @@ Applied to training set only — validation and test kept clean:
 
 ---
 
-## 👥 Team
-
-| Name |
-|---|
-|Nour Ezz|
-
----
-
 ## 📄 License
 
 This project is for academic purposes only.
