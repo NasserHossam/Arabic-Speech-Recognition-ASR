@@ -35,14 +35,14 @@ RAVDESS     CNN        Semantic Search  lingual
 ## 🗂️ Repository Structure
 
 ```
-arabic-audio-intelligence/
+Arabic-Speech-Recognition-ASR/
 │
 ├── notebooks/
 │   ├── 01_whisper_finetune_fleurs.ipynb        # ASR fine-tuning on Kaggle
-│   ├── 02_emotion_detection_cnn_lstm.ipynb     # Emotion detection
-│   ├── 03_speaker_identification.ipynb         # Speaker ID
-│   ├── 04_keyword_spotting_summarization.ipynb # Keywords + Summary
-│   └── 05_gradio_demo.ipynb                    # Interactive demo
+│   ├── 02-emotion-detection-cnn-lstm.ipynb     # Emotion detection
+│   ├── 03-speaker-identification.ipynb         # Speaker ID
+│   ├── 04-keyword-spotting-summarization.ipynb # Keywords + Summary
+│   └── 05-gradio-demo.ipynb                    # Interactive demo
 │
 ├── models/
 │   ├── best_emotion_model.pth                  # Trained CNN-BiLSTM weights
@@ -184,8 +184,8 @@ pip install -r requirements.txt
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/NasserHossam/arabic-audio-intelligence
-cd arabic-audio-intelligence
+git clone https://github.com/NasserHossam/Arabic-Speech-Recognition-ASR
+cd Arabic-Speech-Recognition-ASR
 ```
 
 2. Place model files in the correct locations:
@@ -197,7 +197,7 @@ models/
     └── (all config files + model.safetensors)
 ```
 
-3. Open `notebooks/05_gradio_demo.ipynb` in VS Code.
+3. Open `notebooks/05-gradio-demo.ipynb` in VS Code.
 
 4. Update paths in **Cell 10**:
 ```python
@@ -224,10 +224,10 @@ Each notebook is self-contained and designed for Kaggle T4 GPU:
 | Notebook | Task | Kaggle Time |
 |---|---|---|
 | 01_whisper_finetune_fleurs | ASR fine-tuning | ~5.5 hours |
-| 02_emotion_detection_cnn_lstm | Emotion Detection | ~28 min |
-| 03_speaker_identification | Speaker ID | ~30 min |
-| 04_keyword_spotting_summarization | Keywords + Summary | ~15 min |
-| 05_gradio_demo | Interactive Demo | ~12 min |
+| 02-emotion-detection-cnn-lstm | Emotion Detection | ~28 min |
+| 03-speaker-identification | Speaker ID | ~30 min |
+| 04-keyword-spotting-summarization | Keywords + Summary | ~15 min |
+| 05-gradio-demo | Interactive Demo | ~12 min |
 
 ---
 
