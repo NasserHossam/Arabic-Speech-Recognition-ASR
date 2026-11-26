@@ -1,12 +1,12 @@
 # 🎙️ Deep Learning Based Arabic Audio Understanding and Retrieval System
 
-> Fine-tuned Whisper ASR + Emotion Detection + Speaker Identification + Keyword Spotting + Summarization
+> Fine-tuned Whisper ASR + Emotion Detection + Speaker Gender Classification + Keyword Spotting + Summarization
 
 ---
 
 ## 📋 Project Overview
 
-This project builds an end-to-end deep learning pipeline for Arabic speech understanding. It converts Arabic audio to text using a fine-tuned Whisper model, then analyzes the transcript and audio for emotion, speaker identity, keywords, and generates summaries.
+This project builds an end-to-end deep learning pipeline for Arabic speech understanding. It converts Arabic audio to text using a fine-tuned Whisper model, then analyzes the transcript and audio for emotion, speaker gender, keywords, and generates summaries.
 
 ### System Pipeline
 
@@ -25,7 +25,7 @@ Arabic Audio Input
   ┌────┴─────┬──────────────┬─────────────────┐
   ▼          ▼              ▼                 ▼
 Emotion   Speaker      Keyword            Summary
-Detection    ID         Spotting          (mT5)
+Detection  Gender       Spotting          (mT5)
 CNN-BiLSTM  x-vector   Rule-based +    XLSum Multi-
 RAVDESS     CNN        Semantic Search  lingual
 ```
@@ -40,7 +40,7 @@ Arabic-Speech-Recognition-ASR/
 ├── notebooks/
 │   ├── 01_whisper_finetune_fleurs.ipynb        # ASR fine-tuning on Kaggle
 │   ├── 02-emotion-detection-cnn-lstm.ipynb     # Emotion detection
-│   ├── 03-speaker-identification.ipynb         # Speaker ID
+│   ├── 03-speaker-identification.ipynb         # Speaker gender classification
 │   ├── 04-keyword-spotting-summarization.ipynb # Keywords + Summary
 │   └── 05-gradio-demo.ipynb                    # Interactive demo
 │
@@ -96,13 +96,14 @@ Arabic-Speech-Recognition-ASR/
 | Parameters | ~2.5M |
 | Sample rate | 22,050 Hz |
 
-### 3. Speaker Identification — x-vector CNN
+### 3. Speaker Gender Classification — x-vector CNN
 
 | Property | Value |
 |---|---|
 | Architecture | CNN (3 blocks) + Statistics Pooling + FC layers |
 | Input features | Mel Filterbank → shape (80, 300) |
-| Dataset | FLEURS ar_eg with speaker metadata |
+| Task | Gender classification (not individual speaker identity) |
+| Dataset | FLEURS ar_eg with gender metadata |
 | Classes | male, female |
 | Embedding dim | 256-dimensional d-vector |
 | Sample rate | 16,000 Hz |
@@ -225,7 +226,7 @@ Each notebook is self-contained and designed for Kaggle T4 GPU:
 |---|---|---|
 | 01_whisper_finetune_fleurs | ASR fine-tuning | ~5.5 hours |
 | 02-emotion-detection-cnn-lstm | Emotion Detection | ~28 min |
-| 03-speaker-identification | Speaker ID | ~30 min |
+| 03-speaker-identification | Speaker Gender | ~30 min |
 | 04-keyword-spotting-summarization | Keywords + Summary | ~15 min |
 | 05-gradio-demo | Interactive Demo | ~12 min |
 
@@ -239,7 +240,7 @@ The Gradio demo provides a web interface with:
 - **5 analysis modules** (individually toggleable):
   - 🎙️ Speech-to-Text — Arabic transcript
   - 😊 Emotion Detection — probability bars for 4 emotions
-  - 👤 Speaker ID — male/female with confidence
+  - 👤 Speaker Gender — male/female with confidence
   - 🔍 Keyword Spotting — exact + semantic matching
   - 📝 Summarization — compressed Arabic summary
 
