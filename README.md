@@ -279,6 +279,10 @@ This project is for academic purposes only.
 
 ---
 
+## 👥 Credits
+
+- The Whisper fine-tuning notebook (`notebooks/01_whisper_finetune_fleurs.ipynb`) was developed by a teammate.
+
 ## 🙏 Acknowledgments
 
 - [OpenAI Whisper](https://github.com/openai/whisper) — base ASR model
