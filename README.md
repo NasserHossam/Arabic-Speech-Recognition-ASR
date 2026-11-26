@@ -16,7 +16,7 @@ Arabic Audio Input
        ▼
 ┌─────────────────────┐
 │   Whisper Small     │  Fine-tuned on FLEURS ar_eg
-│   Speech-to-Text    │  WER: 21.8%
+│   Speech-to-Text    │  WER: 22.0%
 └─────────────────────┘
        │
        ▼
@@ -52,7 +52,7 @@ arabic-audio-intelligence/
 │       ├── generation_config.json
 │       ├── tokenizer.json
 │       ├── tokenizer_config.json
-│       └── preprocessor_config.json
+│       └── processor_config.json
 │
 ├── requirements.txt
 └── README.md
@@ -162,7 +162,7 @@ arabic-audio-intelligence/
 | Dataset | RAVDESS → 4 classes |
 | Classes | neutral, happy, sad, angry |
 
-### Speaker Identification
+### Speaker gender classification
 
 | Metric | Value |
 |---|---|
@@ -184,7 +184,7 @@ pip install -r requirements.txt
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/arabic-audio-intelligence
+git clone https://github.com/NasserHossam/arabic-audio-intelligence
 cd arabic-audio-intelligence
 ```
 
