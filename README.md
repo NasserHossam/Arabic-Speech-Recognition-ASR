@@ -59,8 +59,8 @@ Arabic-Speech-Recognition-ASR/
 ```
 
 > **Note:** `model.safetensors` (782 MB) is not included due to GitHub file size limits.
-> The fine-tuned Whisper weights achieve **WER 21.8%** on FLEURS ar_eg.
-> To retrain from scratch, run `notebooks/01_whisper_finetune_fleurs.ipynb` on Kaggle T4 GPU (~5.5 hours).
+> The fine-tuned Whisper weights achieve **WER 21.8%** (test set) on FLEURS ar_eg.
+> The weights are currently stored as a private Kaggle dataset; ask the project owner for access, or retrain from scratch by running `notebooks/01_whisper_finetune_fleurs.ipynb` on Kaggle T4 GPU (~5.5 hours).
 
 ---
 
@@ -266,6 +266,12 @@ Applied to training set only — validation and test kept clean:
 | Silence padding up to 0.25s | 24% | Different recording start times |
 
 ---
+
+## ⚠️ Limitations
+
+- The emotion model is trained on RAVDESS, an English acted-speech dataset. Its accuracy on natural Egyptian Arabic speech is expected to be lower than the reported RAVDESS test results.
+- The speaker module classifies gender (male/female). It does not identify individual speakers.
+- The zero-shot Whisper WER range (~45–55%) is an estimate and was not measured in this project.
 
 ## 📄 License
 
